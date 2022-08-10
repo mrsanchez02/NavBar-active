@@ -1,7 +1,20 @@
+:root{
+  --primary-bg: radial-gradient( circle farthest-corner at 10% 20%,  rgba(14,174,87,1) 0%, rgba(12,116,117,1) 90% );
+  --primary-fg: rgb(0, 0, 0);
+  --emphasis-color: #fff;
+  --primary-selector: rgb(67, 67, 67);
+}
+
 body{
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+}
+
+.container{
+  width: 100vw;
+  height: 100vh;
+  background-image: var(--primary-bg);
 }
 
 ul {
@@ -12,23 +25,37 @@ ul {
   margin: 0;
   padding: 0;
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 ul li {
   list-style: none;
 }
 
-ul li a {
+.nav__link {
   position: relative;
   display: block;
   padding: 10px 20px;
   text-decoration: none;
   text-transform: uppercase;
-  color: #262626;
+  color: var(--primary-fg);
   font-weight: bold;
+  transition: all 200ms;
 }
 
 ul li.active a {
-  background-color: #262626;
-  color: #fff;
+  background-color: var(--primary-fg);
+  color: var(--emphasis-color);
+}
+
+ul li:hover a {
+  background-color: var(--primary-selector);
+  color: var(--emphasis-color);
+}
+
+@media screen and (max-width: 600px){
+  ul{
+    flex-direction: column;
+  }
 }
